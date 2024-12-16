@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba de Juanma</title>
+    <title>250 Peliculas</title>
 </head>
 <body>
-    <h1>Home Page de Juanma</h1>
+    <nav>
+        <div id="buscar">
+            <div id="buscarTitulo" class="buscar">
+                <input type="text" placeholder="Título">
+                <button id="bTitulo">Buscar por título</button>
+            </div>
+
+            <div id="buscarActor" class="buscar">
+                <input type="text" placeholder="Actor">
+                <button id="bActor">Buscar por actor</button>
+            </div>
+
+            <div id="buscarGenero" class="buscar">
+                <select name="genero" id="sGenero">
+                    <option value="Drama">Drama</option>
+                    <option value="Crime" selected>Crime</option>
+                    <option value="value3">Action</option>
+                    <option value="value3">Adventure</option>
+                </select>
+                <button id="bGenero">Buscar por genero</button>
+            </div>
+
+            <div id="buscarAnyo" class="buscar">
+                <input type="text" placeholder="Año">
+                <button id="bAnyo">Buscar por año</button>
+            </div>
+        </div>
+
+        <div id="ordenar">
+            <div id="ordenarDuracion" class="ordenar">
+                <select name="duracion" id="sDuracion">
+                    <option value="Ascendente" selected>Ascendente</option>
+                    <option value="Descendente">Descendente</option>
+                </select>
+                <button id="bDuracion">Ordenar por Duración</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <article class="peliculas accion" titulo="titulo 1">
+            <h2>Titulo 1</h2>
+            <h3>Director : director 1</h3>
+            <h4>Genero : Accioón</h4>
+            <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="peli 1">
+            <p>Reparto : actor 1, actriz 1, actriz 2</p>
+        </article>
+
+        <article class="peliculas drama" titulo="titulo 2">
+            <h2>Titulo 2</h2>
+            <h3>Director : director 2</h3>
+            <h4>Genero : Accioón</h4>
+            <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="peli 2">
+            <p>Reparto : actor 1, actor 2, actriz 3</p>
+        </article>
+
+        <article class="peliculas accion" titulo="titulo 3">
+            <h2>Titulo 3</h2>
+            <h3>Director : director 1</h3>
+            <h4>Genero : Accioón</h4>
+            <img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg" alt="peli 3">
+            <p>Reparto : actor 1, actriz 2, actriz 4</p>
+        </article>
+
+        <article class="peliculas crimen" titulo="titulo 4">
+            <h2>Titulo 4</h2>
+            <h3>Director : director 3</h3>
+            <h4>Genero : Accioón</h4>
+            <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="peli 4">
+            <p>Reparto : actor 2, actor 3, actriz 5</p>
+        </article>
+    </main>
 </body>
 </html>
