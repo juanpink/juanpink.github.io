@@ -3,80 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>250 Peliculas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <title>Super Pelis</title>
 </head>
 <body>
-    <nav>
-        <div id="buscar">
-            <div id="buscarTitulo" class="buscar">
-                <input type="text" placeholder="Título">
-                <button id="bTitulo">Buscar por título</button>
-            </div>
+    <div id="div-formulario">
+        <input type="text" id="t-titulo" placeholder="Título">
+        <button id="b-titulo">Buscar</button>
+        <input type="text" id="t-actor" placeholder="Actor">
+        <button id="b-actor">Buscar</button>
+        <select id="s-genero">
+            <option value="drama">Drama</option>
+            <option value="terror">Terror</option>
+        </select>
+        <button id="b-genero">Buscar</button>
+        <input type="number" id="t-anyo" placeholder="Año" min="1900" max="2030">
+        <button id="b-anyo">Buscar</button>
 
-            <div id="buscarActor" class="buscar">
-                <input type="text" placeholder="Actor">
-                <button id="bActor">Buscar por actor</button>
+        <label for="r-asc">Duración ascendente</label>
+        <input type="radio" id="r-asc" name="ordenar" value="ascendente">
+        <label for="r-desc">Duración descendente</label>
+        <input type="radio" id="r-desc" name="ordenar" value="descendente">
+        <button id="b-ordenar">Ordenar</button>        
+    </div>
+    <div class="container">
+        <!-- Tarjeta 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x450" alt="Póster de película">
+            <div class="card-content">
+                <h3>El Padrino</h3>
+                <p><strong>Director:</strong> Francis Ford Coppola</p>
+                <p><strong>Año:</strong> 1972</p>
+                <p><span class="genre">Género:</span> Drama, Crimen</p>
             </div>
+        </div>
 
-            <div id="buscarGenero" class="buscar">
-                <select name="genero" id="sGenero">
-                    <option value="Drama">Drama</option>
-                    <option value="Crime" selected>Crime</option>
-                    <option value="value3">Action</option>
-                    <option value="value3">Adventure</option>
-                </select>
-                <button id="bGenero">Buscar por genero</button>
-            </div>
-
-            <div id="buscarAnyo" class="buscar">
-                <input type="text" placeholder="Año">
-                <button id="bAnyo">Buscar por año</button>
+        <!-- Tarjeta 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x450" alt="Póster de película">
+            <div class="card-content">
+                <h3>Inception</h3>
+                <p><strong>Director:</strong> Christopher Nolan</p>
+                <p><strong>Año:</strong> 2010</p>
+                <p><span class="genre">Género:</span> Ciencia ficción, Thriller</p>
             </div>
         </div>
 
-        <div id="ordenar">
-            <div id="ordenarDuracion" class="ordenar">
-                <select name="duracion" id="sDuracion">
-                    <option value="Ascendente" selected>Ascendente</option>
-                    <option value="Descendente">Descendente</option>
-                </select>
-                <button id="bDuracion">Ordenar por Duración</button>
+        <!-- Tarjeta 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x450" alt="Póster de película">
+            <div class="card-content">
+                <h3>La La Land</h3>
+                <p><strong>Director:</strong> Damien Chazelle</p>
+                <p><strong>Año:</strong> 2016</p>
+                <p><span class="genre">Género:</span> Musical, Romance</p>
             </div>
         </div>
-    </nav>
 
-    <main>
-        <article class="peliculas accion" titulo="titulo 1">
-            <h2>Titulo 1</h2>
-            <h3>Director : director 1</h3>
-            <h4>Genero : Accioón</h4>
-            <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="peli 1">
-            <p>Reparto : actor 1, actriz 1, actriz 2</p>
-        </article>
+        <!-- Tarjeta 4 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x450" alt="Póster de película">
+            <div class="card-content">
+                <h3>Gladiador</h3>
+                <p><strong>Director:</strong> Ridley Scott</p>
+                <p><strong>Año:</strong> 2000</p>
+                <p><span class="genre">Género:</span> Acción, Drama</p>
+            </div>
+        </div>
 
-        <article class="peliculas drama" titulo="titulo 2">
-            <h2>Titulo 2</h2>
-            <h3>Director : director 2</h3>
-            <h4>Genero : Accioón</h4>
-            <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="peli 2">
-            <p>Reparto : actor 1, actor 2, actriz 3</p>
-        </article>
+        <!-- Tarjeta 4 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x450" alt="Póster de película">
+            <div class="card-content">
+                <h3>Gladiador</h3>
+                <p><strong>Director:</strong> Ridley Scott</p>
+                <p><strong>Año:</strong> 2000</p>
+                <p><span class="genre">Género:</span> Acción, Drama</p>
+            </div>
+        </div>
 
-        <article class="peliculas accion" titulo="titulo 3">
-            <h2>Titulo 3</h2>
-            <h3>Director : director 1</h3>
-            <h4>Genero : Accioón</h4>
-            <img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg" alt="peli 3">
-            <p>Reparto : actor 1, actriz 2, actriz 4</p>
-        </article>
+        <!-- Más tarjetas se pueden agregar de manera similar -->
 
-        <article class="peliculas crimen" titulo="titulo 4">
-            <h2>Titulo 4</h2>
-            <h3>Director : director 3</h3>
-            <h4>Genero : Accioón</h4>
-            <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="peli 4">
-            <p>Reparto : actor 2, actor 3, actriz 5</p>
-        </article>
-    </main>
+    </div>
 </body>
 </html>
