@@ -1,31 +1,33 @@
 const URL = 'https://juanpink.github.io/movies-250.json';
 
-function generarCard(pelicula) {
-    //1. Crear la tarjeta
+let peliculas;
+
+function generateCard(pelicula) {
+    //1. Crear la Tarjeta
     const nuevaCard = document.createElement("div");//Crea un elemento de tipo div
     nuevaCard.setAttribute("class","card");
 
-    //2. Crear la imagen
+    //2. Crear la Imagen
     const nuevaImg = document.createElement("img");
     nuevaImg.setAttribute("src", pelicula.Poster);
     nuevaImg.setAttribute("alt", `Póster de la película ${pelicula.Title}`);
     nuevaCard.appendChild(nuevaImg);
 
-    //3. Crear el contenido de la tarjeta
+    //3. Crear el contenido de la Tarjeta
     const nuevoContenido = document.createElement("div");
     nuevoContenido.setAttribute("class","card-content");
     nuevaCard.appendChild(nuevoContenido);
 
-    //4. Crear el h3 del título
+    //4. Crear el Título
     const nuevoTitulo = document.createElement("h3");
     nuevoTitulo.textContent = pelicula.Title;
     nuevoContenido.appendChild(nuevoTitulo);
 
-    //5. Crear el director
+    //5. Crear el Director
     const nuevoParrafoDirector = document.createElement("p");
     const nuevaNegrita = document.createElement("strong");
     nuevoParrafoDirector.appendChild(nuevaNegrita);
-    nuevaNegrita.textContent = "Director: ";
+    nuevaNegrita.textContent = "Director : ";
     nuevoContenido.appendChild(nuevoParrafoDirector);
     const textoDirector = document.createTextNode(pelicula.Director)
     nuevoParrafoDirector.appendChild(textoDirector);
@@ -56,10 +58,15 @@ function generarCard(pelicula) {
 function processMovie(data) {
     //console.log(data);
 
-    const peliculas = data.movies;
+    peliculas = data.movies;
     peliculas.forEach(pelicula => {
-        generarCard(pelicula);
+        generateCard(pelicula);
     });
+}
+
+function clearCards(){
+    //document.querySelector("#container").innerHTML="";//Chapuza
+    document.querySelectorAll(".card").forEach(card=>card.remove());//Elegante
 }
 
 doGetRequest(URL, processMovie);

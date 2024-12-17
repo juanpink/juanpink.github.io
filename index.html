@@ -6,18 +6,27 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mystyle.css">
     <title>Super Pelis</title>
+
+    <script src="./myhttp.js" defer></script>
+    <script src="./app.js" defer></script>
+    <script src="./gestor-eventos.js" defer></script>
 </head>
 <body>
     <div id="div-formulario">
         <input type="text" id="t-titulo" placeholder="Título">
         <button id="b-titulo">Buscar</button>
+
         <input type="text" id="t-actor" placeholder="Actor">
         <button id="b-actor">Buscar</button>
+
         <select id="s-genero">
-            <option value="drama">Drama</option>
-            <option value="terror">Terror</option>
+            <option value="Drama">Drama</option>
+            <option value="Terror">Terror</option>
+            <option value="Action">Acción</option>
+            <option value="Adventure">Aventura</option>
         </select>
         <button id="b-genero">Buscar</button>
+
         <input type="number" id="t-anyo" placeholder="Año" min="1900" max="2030">
         <button id="b-anyo">Buscar</button>
 
@@ -45,5 +54,8 @@
 </body>
 </html>
 
+<!--
 <script src="./myhttp.js"></script>
 <script src="./app.js"></script>
+<script src="./gestor-eventos.js"></script>
+-->
