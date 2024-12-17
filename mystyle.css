@@ -1,5 +1,6 @@
 #div-formulario {
     padding: 1em;
+    text-align: center;
 }
 #div-formulario input,button,select {
     padding: 0.5em;
