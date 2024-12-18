@@ -1,6 +1,7 @@
 const URL = 'https://juanpink.github.io/movies-250.json';
 
 let peliculas;
+let peliculasFiltradas;
 
 function generateCard(pelicula) {
     //1. Crear la Tarjeta
@@ -62,6 +63,7 @@ function processMovie(data) {
     //console.log(data);
 
     peliculas = data.movies;
+    peliculasFiltradas = data.movies;
 
     crearConjuntoGeneros(peliculas);
 
