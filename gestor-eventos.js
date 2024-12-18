@@ -36,12 +36,17 @@ document.querySelector("#b-actor").addEventListener("click", () => {
             pelicula.Actors
                 .toUpperCase()
                 .includes(textoBusqueda.trim().toUpperCase()));
+    /*
     peliculasFiltradas.forEach(pelicula => {
         generateCard(pelicula);
     });
+    */
+
+    peliculasFiltradas.map(generateCard); //Es equivalente al forEach y más compacto, le paso la función callback
 });
 
 //Buscar por género
+/*
 document.querySelector("#b-genero").addEventListener("click", () => {
     clearCards();
     const textoBusqueda = document.querySelector("#s-genero").value;
@@ -54,8 +59,23 @@ document.querySelector("#b-genero").addEventListener("click", () => {
         generateCard(pelicula);
     });
 });
+*/
 
-//Buscar por año
+//Buscar por género directamente al seleccionar de la lista
+document.querySelector("#s-genero").addEventListener("change", () => {
+    clearCards();
+    const textoBusqueda = document.querySelector("#s-genero").value;
+    const peliculasFiltradas =
+        peliculas.filter(pelicula =>
+            pelicula.Genre
+                .toUpperCase()
+                .includes(textoBusqueda.trim().toUpperCase()));
+    peliculasFiltradas.map(generateCard);
+});
+
+//Buscar por año y lo sacamos a una función, lo demás se podría hacer también así
+filtrarPeliculas("#b-anyo", "click", "#t-anyo", "Year");
+/*
 document.querySelector("#b-anyo").addEventListener("click", () => {
     //console.log(document.querySelector("#s-genero").value);
 
@@ -63,13 +83,14 @@ document.querySelector("#b-anyo").addEventListener("click", () => {
     const textoBusqueda = document.querySelector("#t-anyo").value;
     const peliculasFiltradas =
         peliculas.filter(pelicula =>
-            pelicula.Year
+            pelicula["Year"]
                 .toUpperCase()
                 .includes(textoBusqueda.trim().toUpperCase()));
     peliculasFiltradas.forEach(pelicula => {
         generateCard(pelicula);
     });
 });
+*/
 
 //Ordenar películas
 document.querySelector("#b-ordenar").addEventListener("click", () => {
@@ -100,3 +121,18 @@ document.querySelector("#b-ordenar").addEventListener("click", () => {
     });
     
 });
+
+function filtrarPeliculas(idElementoListener, evento, idElementoBusqueda, nombreAtributoBusqueda) {
+    document.querySelector(idElementoListener).addEventListener(evento, () => {   
+        clearCards();
+        const textoBusqueda = document.querySelector(idElementoBusqueda).value;
+        const peliculasFiltradas =
+            peliculas.filter(pelicula =>
+                pelicula[nombreAtributoBusqueda]
+                    .toUpperCase()
+                    .includes(textoBusqueda.trim().toUpperCase()));
+        peliculasFiltradas.forEach(pelicula => {
+            generateCard(pelicula);
+        });
+    });
+}

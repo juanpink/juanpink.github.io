@@ -80,12 +80,9 @@ function crearConjuntoGeneros(peliculas) {
 
     peliculas.forEach(pelicula => {
         //por cada string de generos
-        const generos = pelicula.Genre.split(", ");
+        const generos = pelicula.Genre.split(",").map(genero => genero.trim());
         generos.forEach(genero => setGeneros.add(genero));
     });
-
-    //console.log("Conjunto de géneros ---> " + setGeneros);
-    //for (let genero of setGeneros) console.log(genero)
 
     const listaSelect = document.querySelector("#s-genero");
     listaSelect.innerHTML = "";
