@@ -73,5 +73,30 @@ document.querySelector("#b-anyo").addEventListener("click", () => {
 
 //Ordenar películas
 document.querySelector("#b-ordenar").addEventListener("click", () => {
-    console.log(document.querySelector("#r-asc").value);
+    //console.log(document.querySelector('input[name="ordenar"]:checked').value);
+
+    clearCards();
+
+    const orden = document.querySelector('input[name="ordenar"]:checked').value;
+
+    /*
+    const runtime = "142 min";
+    console.log("Tiempo" + runtime.split(" ")[0] + " Tipo " + typeof(runtime.split(" ")[0]));
+    console.log("Numero" + parseInt(runtime.split(" ")[0]) + " Tipo " + typeof(parseInt(runtime.split(" ")[0])));
+    */
+
+    const pelis = [].concat(peliculas);
+    const peliculasOrdenadas = pelis.sort((p1, p2) => {
+        const pDuracion1 = parseInt(p1.Runtime.split(" ")[0]);
+        const pDuracion2 = parseInt(p2.Runtime.split(" ")[0]);
+
+        if (orden === "ascendente") {
+            return pDuracion1 - pDuracion2;
+        }
+        return pDuracion2 - pDuracion1;
+    });
+    peliculasOrdenadas.forEach(pelicula => {
+        generateCard(pelicula);
+    });
+    
 });

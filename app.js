@@ -51,6 +51,9 @@ function generateCard(pelicula) {
     const textoGenero = document.createTextNode(pelicula.Genre);
     nuevoGenero.appendChild(textoGenero);
 
+    //8. Poner la duración
+    nuevoContenido.innerHTML += pelicula.Runtime; 
+
     //Agregamos el div al contenedor
     document.querySelector("#container").appendChild(nuevaCard);
 }
@@ -59,6 +62,9 @@ function processMovie(data) {
     //console.log(data);
 
     peliculas = data.movies;
+
+    crearConjuntoGeneros(peliculas);
+
     peliculas.forEach(pelicula => {
         generateCard(pelicula);
     });
@@ -67,6 +73,25 @@ function processMovie(data) {
 function clearCards(){
     //document.querySelector("#container").innerHTML="";//Chapuza
     document.querySelectorAll(".card").forEach(card=>card.remove());//Elegante
+}
+
+function crearConjuntoGeneros(peliculas) {
+    const setGeneros = new Set();
+
+    peliculas.forEach(pelicula => {
+        //por cada string de generos
+        const generos = pelicula.Genre.split(", ");
+        generos.forEach(genero => setGeneros.add(genero));
+    });
+
+    //console.log("Conjunto de géneros ---> " + setGeneros);
+    //for (let genero of setGeneros) console.log(genero)
+
+    const listaSelect = document.querySelector("#s-genero");
+    listaSelect.innerHTML = "";
+    for (let genero of setGeneros) {
+        listaSelect.innerHTML += `<option value="${genero}">${genero}</option>`
+    }
 }
 
 doGetRequest(URL, processMovie);
