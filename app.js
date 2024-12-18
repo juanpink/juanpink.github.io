@@ -57,6 +57,9 @@ function generateCard(pelicula) {
 
     //Agregamos el div al contenedor
     document.querySelector("#container").appendChild(nuevaCard);
+
+    //9. Poner el número de películas
+    document.querySelector("#numero-peliculas").innerHTML = "Hay " + peliculasFiltradas.length + " peliculas";
 }
 
 function processMovie(data) {
