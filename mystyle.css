@@ -7,6 +7,14 @@
     align-items: center;
     justify-content: center;
 }
+
+#div-formulario div {
+    margin-left: 20px;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
 #div-formulario input,button,select {
     padding: 0.5em;
     border-radius: 5px;
@@ -25,4 +33,25 @@
     text-align: center;
     color: rgb(10, 213, 10);
     font-size: 1.3rem;
+}
+
+/* Responsividad */
+@media (max-width: 900px) {
+    #div-formulario {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #div-formulario div {
+        margin-bottom: 10px;
+    }
+
+    #b-ordenar {
+        margin-top: 10px;
+    }
+
+    #div-formulario label {
+        font-size: 0.9rem;
+    }
+    
 }
