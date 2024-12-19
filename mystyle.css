@@ -1,6 +1,11 @@
 #div-formulario {
     padding: 1em;
     text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 #div-formulario input,button,select {
     padding: 0.5em;
